@@ -42,20 +42,23 @@ public void setId(Long id){
     this.id = id;
 }
 
-    public void AddChild( Human human) {
+    public boolean AddChild( Human human) {
     if (!child.contains(human)){
         child.add(human);
+        return true;
     }
+    return false;
     }
+
     public List<Human> getChild() {
         return this.child;
     }
-    public void AddParents(Human parent ){
+    public void AddParent(Human parent ){
         if(parent.getGender().equals(Gender.Female)){
-            parent.setMother(parent);
+            setMother(parent);
         }
         else if(parent.getGender().equals(Gender.Male)){
-            parent.setFather(parent);
+            setFather(parent);
         }
     }
 
@@ -151,7 +154,7 @@ public String getInfo(){
     sb.append("DD: ");
     sb.append(getDd());
     sb.append("Mother and Father: ");
-    sb.append(getParents());
+    sb.append(getParentsInfo());
     sb.append("Child: ");
     sb.append(getChildInfo());
     return sb.toString();

@@ -30,13 +30,13 @@ public long getMembersId() {
 }
 
 
-public void addToParents(E e){
+private void addToParents(E e){
 for (E parent:e.getParents())
 parent.AddChild(e);
 }
-public void addToChild(E e){
+private void addToChild(E e){
 for (E child:e.getChild())
-child.AddParents(e);
+child.AddParent(e);
 }
 
 public E getById(long id){
@@ -66,7 +66,8 @@ sb.append(e.getInfo());
 }
 return sb.toString();
 }
- @Override
+ 
+@Override
  public String toString() {
      return getInfoTree();
 }

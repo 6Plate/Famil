@@ -10,7 +10,7 @@ void setId(Long id);
 long getId();
 String getInfo();
 List <E> getParents();
-void AddParents(E e);
-void AddChild (E e);
+void AddParent(E e);
+boolean AddChild (E e);
 List<E> getChild();
 }

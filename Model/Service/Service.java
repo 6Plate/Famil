@@ -52,7 +52,7 @@ parent.AddChild(e);
 }
 public void addToChild(Human e){
 for (Human child:e.getChild())
-child.AddParents(e);
+child.AddParent(e);
 }
 
 public Human getById(long id){
