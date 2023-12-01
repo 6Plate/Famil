@@ -17,11 +17,7 @@ public class Service {
         tree = new FamilyTree<>();
         builder = new HumanBuilder();
     }
-    public void addItem(String name, Gender gender, LocalDate bd, LocalDate dd, Human mother, Human father, List<Human> child) {
-        Human human = builder.build (name, gender, bd, dd, mother, father);
-        tree.addHuman(human);
     
-    }
 
     public void addItem(String name, Gender gender, LocalDate bd, Human mother, Human father){
         Human human = builder.build(name, gender, bd, mother, father);
@@ -32,6 +28,8 @@ public class Service {
         tree.addHuman(human);
     }
 
+
+    
     public String getHumanInfo(){
     StringBuilder sb = new StringBuilder();
     sb.append("Дерево:");
@@ -46,14 +44,14 @@ public void sortByAge(){ tree.sortByAge(); }
 
 public void sortByName(){tree.sortByName();} 
 
-public void addToParents(Human e){
-for (Human parent:e.getParents())
-parent.AddChild(e);
-}
-public void addToChild(Human e){
-for (Human child:e.getChild())
-child.AddParent(e);
-}
+// public void addToParents(Human e){
+// for (Human parent:e.getParents())
+// parent.AddChild(e);
+// }
+// public void addToChild(Human e){
+// for (Human child:e.getChild())
+// child.AddParent(e);
+// }
 
 public Human getById(long id){
 for (Human e: tree){
