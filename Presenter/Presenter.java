@@ -25,8 +25,8 @@ public void addHuman2(String name, String gender, int yb, int mb, int db){
     view.answer("Человек успешно добавлен");
 }
 
-public void getHumanListInfo(){
-    service.getHumanInfo();
+public String getHumanListInfo(){
+    return service.getHumanInfo();
 }
 
 public void sortByName(){
@@ -35,5 +35,13 @@ public void sortByName(){
 
 public void sortByAge(){
     service.sortByAge();
+}
+
+public void AddParent(long idHuman, long idPar){
+    service.AddParentById(idHuman, idPar);
+}
+
+public void addChild(long idHuman, long idCh){
+    service.AddChildById(idHuman, idCh);
 }
 }

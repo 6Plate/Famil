@@ -44,6 +44,14 @@ public void sortByAge(){ tree.sortByAge(); }
 
 public void sortByName(){tree.sortByName();} 
 
+public void AddParentById(long idHuman, long IdPar){
+    tree.getById(idHuman).AddParent(getById(IdPar));
+}
+
+public void AddChildById( long idHuman, long IdCh){
+    tree.getById(idHuman).AddChild(getById(IdCh));
+}
+
 // public void addToParents(Human e){
 // for (Human parent:e.getParents())
 // parent.AddChild(e);

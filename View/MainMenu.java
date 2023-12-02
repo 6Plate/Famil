@@ -3,7 +3,9 @@ package View;
 import java.util.ArrayList;
 import java.util.List;
 
+import View.Commands.AddChild;
 import View.Commands.AddHuman;
+import View.Commands.AddParent;
 import View.Commands.Command;
 import View.Commands.Finish;
 import View.Commands.GetHumanListInfo;
@@ -19,7 +21,10 @@ public class MainMenu {
         commandList.add(new GetHumanListInfo(view));
         commandList.add(new SortByName(view));
         commandList.add(new SortByAge(view));
+        commandList.add(new AddParent(view));
+        commandList.add(new AddChild(view));
         commandList.add(new Finish(view));
+    
     
     }
 

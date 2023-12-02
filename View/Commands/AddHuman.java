@@ -9,7 +9,7 @@ public class AddHuman extends Command {
 
 
     public AddHuman(View view){
-        super("Добавить студента", view);
+        super("Добавить человека", view);
     }
     
     public void execute(){

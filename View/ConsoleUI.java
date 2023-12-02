@@ -45,18 +45,41 @@ public ConsoleUI(){
         presenter.addHuman2(name, gender, yb, mb, db);
     }
 
-    public void getHumanListInfo(){
-        presenter.getHumanListInfo();
+    public String getHumanListInfo(){
+       return presenter.getHumanListInfo();
     }
 
     public void sortByName(){
         presenter.sortByName();
+        System.out.println(presenter.getHumanListInfo());
     }
 
     public void sortByAge(){
         presenter.sortByAge();
+        System.out.println(presenter.getHumanListInfo());
+    }
+    public void AddParent(){
+        System.out.println(presenter.getHumanListInfo());
+        System.out.println("Укажите id человека, которому желаете добавить родителя");
+        String idStr = scanner.nextLine();
+        long idH = Long.parseLong(idStr);
+        System.out.println("Укажите id потенциального родителя");
+        String idStrP = scanner.nextLine();
+        long idP = Long.parseLong(idStrP);
+        presenter.AddParent(idH,idP);
     }
 
+    public void addChild(){
+        System.out.println(presenter.getHumanListInfo());
+        System.out.println("Укажите id человека, которому желаете добавить ребенка");
+        String idStr = scanner.nextLine();
+        long idH = Long.parseLong(idStr);
+        System.out.println("Укажите id потенциального родителя");
+        String idStrCh = scanner.nextLine();
+        long idCh = Long.parseLong(idStrCh);
+        presenter.addChild(idH,idCh);
+
+    }
 
     public void finish(){
         System.out.println("До новых встреч!");
@@ -66,12 +89,14 @@ public ConsoleUI(){
     public void error(){
         System.out.println("Вы указали неверное значение");
     }
+    
     private void printMenu(){
     System.out.println(menu.print());
     }
 
     @Override
-    public void answer(String answer) {
-    System.out.println(answer);
-    }
+    public void answer(String answer) {System.out.println(answer);}
+
+    @Override
+    public String toString() {return getHumanListInfo();}
 }

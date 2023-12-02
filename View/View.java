@@ -4,8 +4,10 @@ public interface View {
 void start();
 void answer(String answer);
 void addHuman2();
-void getHumanListInfo();
+String getHumanListInfo();
 void sortByName();
 void sortByAge();
+void AddParent();
+void addChild();
 void finish();
 }
