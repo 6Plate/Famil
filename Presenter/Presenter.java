@@ -26,7 +26,7 @@ public void addHuman2(String name, String gender, int yb, int mb, int db){
 }
 
 public String getHumanListInfo(){
-    return service.getHumanInfo();
+     return service.getHumanInfo();
 }
 
 public void sortByName(){
