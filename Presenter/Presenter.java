@@ -19,7 +19,7 @@ public void addHuman2(String name, String gender, int yb, int mb, int db){
     if (gender.equals("мужской")){
         service.addItem(name, Gender.Male, LocalDate.of(yb, mb, db));
     }
-    else {
+     else if(gender.equals("женский")){
         service.addItem(name, Gender.Female, LocalDate.of(yb, mb, db));
     }
     view.answer("Человек успешно добавлен");
